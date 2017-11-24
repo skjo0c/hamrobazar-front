@@ -21,12 +21,11 @@ export default class Routes extends Component{
 			          <Grid>
 			            <Navbar.Header>
 			              <Navbar.Brand>
-			                <a href="/">HamroBazar</a>
+			                <NavLink className= "nav-item" to="/">HamroBazar</NavLink>
 			              </Navbar.Brand>
 			              <Navbar.Toggle />
 			            </Navbar.Header>
 
-			            <NavLink className = "nav-item" to = "/components/Items"> Items </NavLink>
 			            <NavLink className = "nav-item" to = "/components/About"> About </NavLink>
 
 			          </Grid>
