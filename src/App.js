@@ -14,7 +14,7 @@ class App extends Component {
   componentWillMount(){
     axios.get('http://localhost:3000/api/v1/advertisements.json')
     .then((response) => {
-      this.setState({advertisements: response});
+      this.setState({advertisements: response.data.data});
     })
     .catch(function (error) {
       console.log(error);
@@ -25,7 +25,8 @@ class App extends Component {
     let advertisements = this.state.advertisements
       return (
         <div>
-          {advertisements.map(advertisement => <h1>{advertisement.name}</h1>)}
+        <br/><br/><br/>
+          {advertisements.map(advertisement => <h1 key={advertisement.id}>{advertisement.name}</h1>)}
         </div>
       );
   }
