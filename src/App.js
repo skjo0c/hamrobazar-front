@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
-import './Main.css';
 import axios from 'axios';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import View from './components/View';
+
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+import {Jumbotron} from 'react-bootstrap'
+
+import './Main.css';
+
 
 class App extends Component {
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       advertisements: []
     };
@@ -24,10 +32,23 @@ class App extends Component {
   render() {
     let advertisements = this.state.advertisements
       return (
-        <div>
-        <br/><br/><br/>
-          {advertisements.map(advertisement => <h1 key={advertisement.id}>{advertisement.name}</h1>)}
-        </div>
+        <Jumbotron>
+          <div>
+          <br/><br/><br/>
+            {advertisements.map(advertisement =>
+              <div key={advertisement.id}> 
+                <h1>
+                  <Link className='adName' to = {`./Advertisement/${advertisement.name}`}>
+                    {advertisement.name}
+                  </Link>
+                </h1>
+                <h4>{advertisement.price}</h4>
+
+                <Route exact path = '/View/:name' component = {View} advertisement={advertisement}/>
+              </div>
+              )}
+          </div>
+        </Jumbotron>
       );
   }
 }
