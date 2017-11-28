@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import View from './components/View';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -38,13 +38,11 @@ class App extends Component {
             {advertisements.map(advertisement =>
               <div key={advertisement.id}> 
                 <h1>
-                  <Link className='adName' to = {`./Advertisement/${advertisement.name}`}>
+                  <Link className='adName' to = {`./Advertisement/${advertisement.id}`}>
                     {advertisement.name}
                   </Link>
                 </h1>
                 <h4>{advertisement.price}</h4>
-
-                <Route exact path = '/View/:name' component = {View} advertisement={advertisement}/>
               </div>
               )}
           </div>
