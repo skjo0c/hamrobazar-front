@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import App from './App';
 import About from './components/About';
-import View from './components/View';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -33,8 +32,7 @@ export default class Routes extends Component{
 
 
 
-				    <Route exact path = '/' component={App} />\
-				    <Route exact path = 'components/View/:id' component = {View}/>
+				    <Route exact path = '/' component={App} />
 					<Route exact path = '/components/About' component={About} />
 				</div>
 

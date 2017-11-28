@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
 import View from './components/View';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -45,6 +45,7 @@ class App extends Component {
                 <h4>{advertisement.price}</h4>
               </div>
               )}
+            <Route exact path = 'components/advertisement/:id' component = {View}/>
           </div>
         </Jumbotron>
       );
