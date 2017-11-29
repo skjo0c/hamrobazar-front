@@ -40,3 +40,19 @@
 	padding-right: 500px;
 	left: 21%;
 }
+
+.NotFound{
+	position: relative;
+	left: 30%;
+}
+
+.yamcha{
+	position: fixed;
+	margin-top: 100px;
+	left: 30%;
+}
+
+.yamchaText{
+	margin-left: 50px; 
+}
+
