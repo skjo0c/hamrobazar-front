@@ -12,6 +12,11 @@
 	color: azure;
 }
 
+.adList{
+	position: relative;
+	left: 21%;
+}
+
 .adName{
 	text-decoration: none;
 	color: #303030;
@@ -20,4 +25,18 @@
 .adName:hover{
 	text-decoration: none;
 	color: black;
+}
+
+.details{
+	position: fixed;
+	margin-top: 100px;
+	left: 21%;
+}
+
+.About{
+	text-align: justify;
+	position: relative;
+	margin-top: 100px;
+	padding-right: 500px;
+	left: 21%;
 }

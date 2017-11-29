@@ -33,19 +33,18 @@ class App extends Component {
     let advertisements = this.state.advertisements
       return (
         <Jumbotron>
-          <div>
+          <div className = 'adList'>
           <br/><br/><br/>
             {advertisements.map(advertisement =>
               <div key={advertisement.id}> 
                 <h1>
-                  <Link className='adName' to = {`./Advertisement/${advertisement.id}`}>
+                  <Link className='adName' to = {`./advertisements/${advertisement.id}`}>
                     {advertisement.name}
                   </Link>
                 </h1>
                 <h4>{advertisement.price}</h4>
               </div>
               )}
-            <Route exact path = 'components/advertisement/:id' component = {View}/>
           </div>
         </Jumbotron>
       );

@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import App from './App';
+import View from './components/View';
+import NotFound from './components/NotFound';
 import About from './components/About';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -30,10 +32,12 @@ export default class Routes extends Component{
 			          </Grid>
 			        </Navbar>
 
-
-
-				    <Route exact path = '/' component={App} />
-					<Route exact path = '/components/About' component={About} />
+			        <Switch>
+					    <Route exact path = '/' component={App} />
+					    <Route exact path = '/advertisements/:id' component = {View}/>
+						<Route exact path = '/components/About' component={About} />
+						<Route component = {NotFound}/>
+					</Switch>
 				</div>
 
 			</Router>

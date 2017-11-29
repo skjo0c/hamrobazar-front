@@ -5,6 +5,7 @@ export default class NotFound extends Component{
 	render(){
 		return(
 			<div className = "NotFound">
+				<br/><br/><br/><br/><br/>
 				<h1> NotFound </h1>
 			</div>
 		);
