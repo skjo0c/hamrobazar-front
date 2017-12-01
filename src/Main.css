@@ -1,3 +1,7 @@
+.nav-container{
+	width: -webkit-fit-content;
+}
+
 .nav-item{
 	float: left;
 	height: 50px;
@@ -14,7 +18,7 @@
 
 .adList{
 	position: relative;
-	left: 21%;
+	left: 120%;
 }
 
 .adName{
@@ -30,7 +34,7 @@
 .details{
 	position: fixed;
 	margin-top: 100px;
-	left: 21%;
+	left: 9%;
 }
 
 .About{
@@ -56,3 +60,21 @@
 	margin-left: 50px; 
 }
 
+.addButton{
+	margin-top: 10px;
+}
+
+.LoginPage{
+	padding: 15px;
+	position: absolute;
+	top: 30%;
+	left: 45%;
+}
+
+.log-name{
+	margin-left: 15px;
+}
+
+.log-btn{
+	margin-left: 45px;
+}

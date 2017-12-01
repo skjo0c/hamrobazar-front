@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Link, Route} from 'react-router-dom';
-import View from './components/View';
+import {Link} from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import {Jumbotron} from 'react-bootstrap'
 
 import './Main.css';
 
@@ -32,7 +30,6 @@ class App extends Component {
   render() {
     let advertisements = this.state.advertisements
       return (
-        <Jumbotron>
           <div className = 'adList'>
           <br/><br/><br/>
             {advertisements.map(advertisement =>
@@ -46,7 +43,6 @@ class App extends Component {
               </div>
               )}
           </div>
-        </Jumbotron>
       );
   }
 }
