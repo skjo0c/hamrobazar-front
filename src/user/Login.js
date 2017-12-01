@@ -38,9 +38,9 @@ export default class Login extends Component{
 			<div className = "LoginPage"> 
 				<form onSubmit = {this.logUser}>
 					<h3 className="log-name">Login Page</h3>
-					<input type = "text" value={this.state.umail} onChange = {this.handleumailChange} placeholder = "Email"/>
+					<input type = "text" value={this.state.umail} onChange = {this.handleumailChange.bind(this)} placeholder = "Email"/>
 					<br/><br/>
-					<input type = "text" value={this.state.upass} onChange = {this.handleupassChange} placeholder = "Password"/>
+					<input type = "password" value={this.state.upass} onChange = {this.handleupassChange.bind(this)} placeholder = "Password"/>
 					<br/><br/>
 					<Button className = "log-btn">Login</Button>
 				</form>
