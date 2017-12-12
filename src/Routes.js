@@ -54,7 +54,7 @@ export default class Routes extends Component{
 
 	checkStorage(){
 		// console.log(localStorage.getItem('name'))
-		if(localStorage.getItem('name') === ""){
+		if(localStorage.getItem('name') === "" || localStorage.getItem('name') === null){
 			console.log("empty")
 		}
 		else{

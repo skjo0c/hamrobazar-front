@@ -15,6 +15,7 @@ export default class Login extends Component{
 			umail: '',
 			upass: ''
 		}
+		this.logUser = this.logUser.bind(this);
 	}
 
 	handleumailChange(event){
@@ -29,8 +30,15 @@ export default class Login extends Component{
 		event.preventDefault();
 		let umail = this.state.umail;
 		let upass = this.state.upass;
-
-
+		console.log(umail);
+	    axios.post('http://localhost:3000/api/v1/authenticate', {email: umail, password: upass})
+	    .then((response) => {
+	      localStorage.setItem('token', response.data.data);
+	      window.location = '/'
+	    })
+	    .catch(function (error) {
+	      console.log(error);
+	    });
 	}
 
 	render(){
@@ -42,7 +50,8 @@ export default class Login extends Component{
 					<br/><br/>
 					<input type = "password" value={this.state.upass} onChange = {this.handleupassChange.bind(this)} placeholder = "Password"/>
 					<br/><br/>
-					<Button className = "log-btn">Login</Button>
+					<input type="submit" value="Log In" />
+					
 				</form>
 			</div>
 		)
