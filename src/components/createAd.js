@@ -32,12 +32,13 @@ export default class createAd extends Component{
 		let price = this.state.price;
 		let description = this.state.description;
 
-	    axios.post('http://localhost:3000/api/v1/create', {name: name, price: price, description: description})
+		axios.defaults.headers['Authorization'] = localStorage.getItem('token');
+	    axios.post('http://localhost:3000/api/v1/advertisements', {name: name, price: price, description: description})
 	    .then((response) => {
 	      window.location = '/'
 	    })
 	    .catch(function (error) {
-	      console.log(error);
+	      window.location = '/login'
 	    });
 	}
 
@@ -52,7 +53,7 @@ export default class createAd extends Component{
 					<br/><br/>
 					<textarea value={this.state.description} onChange = {this.handledescriptionChange.bind(this)} placeholder = "Description"/>
 					<br/><br/>
-					<input type="submit" value="Log In" />
+					<input type="submit" value="Create Ad" />
 					
 				</form>
 			</div>

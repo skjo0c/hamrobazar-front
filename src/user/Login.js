@@ -31,7 +31,9 @@ export default class Login extends Component{
 		let umail = this.state.umail;
 		let upass = this.state.upass;
 
+		
 	    axios.post('http://localhost:3000/api/v1/authenticate', {email: umail, password: upass})
+	    
 	    .then((response) => {
 	      localStorage.setItem('token', response.data.auth_token);
 	      window.location = '/'
