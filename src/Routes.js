@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Login from './user/Login';
 import App from './App';
 import View from './components/View';
+import createAd from './components/createAd';
 import NotFound from './components/NotFound';
 import About from './components/About';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
@@ -9,7 +10,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
-import {NavLink} from 'react-router-dom';
+import {NavLink, withRouter} from 'react-router-dom';
 import {Navbar, Grid, Button} from 'react-bootstrap'
 import './Main.css';
 
@@ -44,6 +45,7 @@ export default class Routes extends Component{
 					    <Route exact path = '/' component={App} />
 					    <Route exact path = '/advertisements/:id' component = {View}/>
 						<Route exact path = '/components/About' component={About} />
+						<Route exact path = '/createAd' component = {createAd} />
 						<Route component = {NotFound}/>
 					</Switch>
 				</div>
@@ -53,12 +55,13 @@ export default class Routes extends Component{
 	}
 
 	checkStorage(){
-		// console.log(localStorage.getItem('name'))
-		if(localStorage.getItem('name') === "" || localStorage.getItem('name') === null){
+		console.log(localStorage.getItem('name'))
+		// localStorage.setItem('token', null)
+		if(localStorage.getItem('token') === "" || localStorage.getItem('token') === null){
 			console.log("empty")
 		}
 		else{
-			console.log(localStorage.getItem('name'))
+			console.log(localStorage.getItem('token'))
 		}
 	}
 }

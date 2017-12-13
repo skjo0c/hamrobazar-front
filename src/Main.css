@@ -45,6 +45,19 @@
 	left: 21%;
 }
 
+.createAd-form{
+	position: fixed;
+	margin-top: 100px;
+	left: 45%;
+	text-align: center;
+}
+
+.form{
+	border: 2px solid grey;
+	border-radius: 5px;
+	padding: 10px;
+}
+
 .NotFound{
 	position: relative;
 	left: 30%;

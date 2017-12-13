@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Link, Route} from 'react-router-dom';
+// import {Link, Route} from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import {Button, Well} from 'react-bootstrap';
+// import {Button, Well} from 'react-bootstrap';
 
 import '../Main.css'
 
@@ -30,10 +30,10 @@ export default class Login extends Component{
 		event.preventDefault();
 		let umail = this.state.umail;
 		let upass = this.state.upass;
-		console.log(umail);
+
 	    axios.post('http://localhost:3000/api/v1/authenticate', {email: umail, password: upass})
 	    .then((response) => {
-	      localStorage.setItem('token', response.data.data);
+	      localStorage.setItem('token', response.data.auth_token);
 	      window.location = '/'
 	    })
 	    .catch(function (error) {
