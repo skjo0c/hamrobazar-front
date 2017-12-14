@@ -75,6 +75,12 @@
 
 .addButton{
 	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.logButton{
+	margin-top: 10px;
+	margin-left: 10px;
 }
 
 .LoginPage{

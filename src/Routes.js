@@ -10,7 +10,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
-import {NavLink, withRouter} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 import {Navbar, Grid, Button} from 'react-bootstrap'
 import './Main.css';
 
@@ -18,6 +18,32 @@ import './Main.css';
 export default class Routes extends Component{
 
 	render(){
+
+		let create_button = null;
+		let log_button = null;
+
+		if(localStorage.getItem('token') === "" || localStorage.getItem('token') === null){
+			console.log('here is no token')
+			log_button = <Link to = '/login'>
+							<Button className = "pull-right logButton" bsStyle = "success">
+				            	Log In
+				            </Button>
+			 		 	</Link>
+
+		}
+		else{
+			console.log('here is token')
+			create_button = <Link to = '/createAd'>
+								<Button className = "pull-right addButton" bsStyle = "success">
+					            	Add New Ad
+					            </Button>			     
+			 				</Link>
+			log_button = <Link to = '/'>
+							<Button className = "pull-right logButton" bsStyle = "danger" onClick = {this.removeToken}>
+				            	Log Out
+				            </Button>				 
+			 			</Link>
+		}
 
 		return(
 			<Router>
@@ -32,10 +58,10 @@ export default class Routes extends Component{
 			            </Navbar.Header>
 
 			            <NavLink className = "nav-item" to = "/components/About"> About </NavLink>
+			            
+			            {create_button}
 
-			            <Button className = "pull-right addButton" bsStyle = "success" onClick = {this.checkStorage}>
-			            	Add New Ad
-			            </Button>
+			            {log_button}
 
 			          </Grid>
 			        </Navbar>
@@ -54,14 +80,8 @@ export default class Routes extends Component{
 		);
 	}
 
-	checkStorage(){
-		console.log(localStorage.getItem('name'))
-		// localStorage.setItem('token', null)
-		if(localStorage.getItem('token') === "" || localStorage.getItem('token') === null){
-			console.log("empty")
-		}
-		else{
-			console.log(localStorage.getItem('token'))
-		}
+	removeToken(){
+		localStorage.removeItem('token')
+		window.location = "/"
 	}
 }
