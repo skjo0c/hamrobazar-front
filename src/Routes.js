@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Login from './user/Login';
+import SignUp from './user/Signup';
 import App from './App';
 import View from './components/View';
 import createAd from './components/createAd';
@@ -68,6 +69,7 @@ export default class Routes extends Component{
 
 			        <Switch>
 			        	<Route exact path = '/login' component = {Login} />
+			        	<Route exact path = '/signup' component = {SignUp} />
 					    <Route exact path = '/' component={App} />
 					    <Route exact path = '/advertisements/:id' component = {View}/>
 						<Route exact path = '/components/About' component={About} />

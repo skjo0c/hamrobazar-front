@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../Main.css'
+import {Button} from 'react-bootstrap';
 
 export default class createAd extends Component{
 
@@ -38,23 +39,22 @@ export default class createAd extends Component{
 	      window.location = '/'
 	    })
 	    .catch(function (error) {
-	      window.location = '/login'
+	      console.log(error.response)
 	    });
 	}
 
 	render(){
 		return(
 			<div className="createAd-form">
-				<form onSubmit = {this.createAdvertisement} className="form">
+				<form onSubmit = {this.createAdvertisement}>
 					<h3 className="log-name">Create Advertisement</h3>
-					<input type = "text" value={this.state.name} onChange = {this.handlenameChange.bind(this)} placeholder = "Name"/>
+					<input type = "text" className= "create-form" value={this.state.name} onChange = {this.handlenameChange.bind(this)} placeholder = "Name"/>
 					<br/><br/>
-					<input type = "number" value={this.state.price} onChange = {this.handlepriceChange.bind(this)} placeholder = "Price"/>
+					<input type = "number" className= "create-form" value={this.state.price} onChange = {this.handlepriceChange.bind(this)} placeholder = "Price"/>
 					<br/><br/>
-					<textarea value={this.state.description} onChange = {this.handledescriptionChange.bind(this)} placeholder = "Description"/>
+					<textarea className= "form-description" value={this.state.description} onChange = {this.handledescriptionChange.bind(this)} placeholder = "Description"/>
 					<br/><br/>
-					<input type="submit" value="Create Ad" />
-					
+					<Button className = "log-form create-btn" type = "submit" bsStyle = "primary"> Create Advertisement </Button>
 				</form>
 			</div>
 		)
