@@ -13,7 +13,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      advertisements: []
+      advertisements: [],
+      categorys: []
     };
   }
 
@@ -23,15 +24,18 @@ class App extends Component {
       return axios.get('http://localhost:3000/api/v1/advertisements.json');
     }
 
-    function getCategories(){
-      return axios.get('http://localhost:3000/api/v1/categories.json');
+    function getCategorys(){
+      return axios.get('http://localhost:3000/api/v1/categorys.json');
     }
 
-    axios.all([getAdvertisements(), getCategories()])
-    .then(axios.spread(function(advertisementResponse, categoriesResponse){
+    axios.all([getAdvertisements(), getCategorys()])
+    .then(axios.spread(function(advertisementResponse, categorysResponse){
       this.setState({advertisements: advertisementResponse.data.data})
-      this.setState({categories: categoriesResponse.data.data})
+      this.setState({categorys: categorysResponse.data.data})
     }))
+    .catch(function (error) {
+      console.log(error);
+    });
     // axios.get('http://localhost:3000/api/v1/advertisements.json')
     // .then((response) => {
     //   this.setState({advertisements: response.data.data});
