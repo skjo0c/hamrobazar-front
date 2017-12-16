@@ -41,15 +41,16 @@ export default class Login extends Component{
 	    axios.post('http://localhost:3000/api/v1/authenticate', {email: umail, password: upass})	    
 	    .then((response) => {
 	      localStorage.setItem('token', response.data.auth_token);
-	      axios.get('http://localhost:3000/api/v1/current_users')
+	      axios.defaults.headers['Authorization'] = localStorage.getItem('token');
+	      axios.get('http://localhost:3000/api/v1/current_users.json')
 	     	.then((response) => {
 	     		console.log(response.data.current_users)
-	     		localStorage.setItem('admin', response.data.current_users);
+	     		localStorage.setItem('current_user', JSON.stringify(response.data));
+	     		window.location = '/'
 	     	})
 	     	.catch(function (error) {
 		      console.log(error.response.data);
 		    });
-	      window.location = '/'
 	    })
 	    .catch(function (error) {
 	      console.log(error.response.data);
