@@ -6,6 +6,7 @@ import View from './components/View';
 import createAd from './components/createAd';
 import NotFound from './components/NotFound';
 import About from './components/About';
+import Category from './admin/Category'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -59,6 +60,7 @@ export default class Routes extends Component{
 			            </Navbar.Header>
 
 			            <NavLink className = "nav-item" to = "/components/About"> About </NavLink>
+			            <NavLink className = "nav-item" to = "/admin"> Category </NavLink>
 			            
 			            {create_button}
 
@@ -74,6 +76,7 @@ export default class Routes extends Component{
 					    <Route exact path = '/advertisements/:id' component = {View}/>
 						<Route exact path = '/components/About' component={About} />
 						<Route exact path = '/createAd' component = {createAd} />
+						<Route exact path = '/admin' component = {Category} />
 						<Route component = {NotFound}/>
 					</Switch>
 				</div>

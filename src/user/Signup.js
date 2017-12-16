@@ -75,7 +75,7 @@ export default class SignUp extends Component{
 		let ucpass = this.state.ucpass
 		let umobile = this.state.umobile
 		
-	    axios.post('http://localhost:3000/api/v1/users', {firstname :fname, lastname :lname, email :umail, password :upass, mobile :umobile})	    
+	    axios.post('http://localhost:3000/api/v1/users', {firstname :fname, lastname :lname, email :umail, password :upass, password_confirmation :ucpass, mobile :umobile})	    
 	    .then((response) => {
 	    	window.location('/login')
 	    })
@@ -105,9 +105,9 @@ export default class SignUp extends Component{
 						<br/><br/>
 						<input className = "log-form" type = "email" value={this.state.umail} onChange = {this.handleumailChange.bind(this)} placeholder = "Email"/>
 						<br/><br/>
-						<input className = "log-form" type = "email" value={this.state.upass} onChange = {this.handleupassChange.bind(this)} placeholder = "Password"/>
+						<input className = "log-form" type = "password" value={this.state.upass} onChange = {this.handleupassChange.bind(this)} placeholder = "Password"/>
 						<br/><br/>
-						<input className = "log-form" type = "email" value={this.state.ucpass} onChange = {this.handleucpassChange.bind(this)} placeholder = "Confirmation Password"/>
+						<input className = "log-form" type = "password" value={this.state.ucpass} onChange = {this.handleucpassChange.bind(this)} placeholder = "Confirmation Password"/>
 						<br/><br/>
 						<input className = "log-form" type = "number" value={this.state.umobile} onChange = {this.handleumobileChange.bind(this)} placeholder = "Mobile Number"/>
 						<br/><br/>
