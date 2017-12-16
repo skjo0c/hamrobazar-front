@@ -20,45 +20,56 @@ class App extends Component {
 
   componentWillMount(){
     
-    function getAdvertisements(){
-      return axios.get('http://localhost:3000/api/v1/advertisements.json');
-    }
+    // function getAdvertisements(){
+    //   return axios.get('http://localhost:3000/api/v1/advertisements.json');
+    // }
 
-    function getCategorys(){
-      return axios.get('http://localhost:3000/api/v1/categorys.json');
-    }
+    // function getCategorys(){
+    //   return axios.get('http://localhost:3000/api/v1/categorys.json');
+    // }
 
-    axios.all([getAdvertisements(), getCategorys()])
-    .then(axios.spread(function(advertisementResponse, categorysResponse){
-      this.setState({advertisements: advertisementResponse.data.data})
-      this.setState({categorys: categorysResponse.data.data})
-    }))
-    .catch(function (error) {
-      console.log(error);
-    });
-    // axios.get('http://localhost:3000/api/v1/advertisements.json')
-    // .then((response) => {
-    //   this.setState({advertisements: response.data.data});
-    // })
+    // axios.all([getAdvertisements(), getCategorys()])
+    // .then(axios.spread(function(advertisementResponse, categorysResponse){
+    //   this.setState({advertisements: advertisementResponse.data.data})
+    //   this.setState({categorys: categorysResponse.data.data})
+    // }))
     // .catch(function (error) {
     //   console.log(error);
     // });
+    axios.get('http://localhost:3000/api/v1/advertisements.json')
+    .then((response) => {
+      this.setState({advertisements: response.data.data});
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+    axios.get('http://localhost:3000/api/v1/categorys.json')
+    .then((response) => {
+      this.setState({categorys: response.data.data});
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   render() {
     let advertisements = this.state.advertisements
+    let categorys = this.state.categorys
       return (
         <div className = "container">
 
           <div className = "catList">
-            
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            {categorys.map(advertisement =>
+              <div key={categorys.id}> 
+                <h1>
+                  <Link className='adName' to = {`./categorys/${categorys.id}`}>
+                    {categorys.name}
+                  </Link>
+                </h1>
+                <h4>{categorys.price}</h4>
+              </div>
+              )}
           </div>
 
           <div className = 'adList'>
