@@ -47,6 +47,16 @@
 	color: black;
 }
 
+.catName{
+	text-decoration: underline;
+	color: #303030;
+}
+
+.catName:hover{
+	text-decoration: none;
+	color: black;
+}
+
 .details{
 	position: fixed;
 	margin-top: 100px;

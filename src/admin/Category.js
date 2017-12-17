@@ -22,7 +22,8 @@ export default class Category extends Component{
 		event.preventDefault();
 		let title = this.state.title;
 
-		axios.post('http://localhost:3000/api/v1/categories', {title: title})
+		axios.defaults.headers['Authorization'] = localStorage.getItem('token');
+		axios.post('http://localhost:3000/api/v1/categorys', {title: title})
 		.then((response) => {
 			window.location = "/admin"
 		})

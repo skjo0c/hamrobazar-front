@@ -37,6 +37,9 @@ export default class Login extends Component{
 		let umail = this.state.umail;
 		let upass = this.state.upass;
 		var self = this;
+		var user_detail = null;
+		var parse = null;
+		var checkadmin = null;
 		
 	    axios.post('http://localhost:3000/api/v1/authenticate', {email: umail, password: upass})	    
 	    .then((response) => {
@@ -44,8 +47,12 @@ export default class Login extends Component{
 	      axios.defaults.headers['Authorization'] = localStorage.getItem('token');
 	      axios.get('http://localhost:3000/api/v1/current_users.json')
 	     	.then((response) => {
-	     		console.log(response.data.current_users)
-	     		localStorage.setItem('current_user', JSON.stringify(response.data));
+	     		user_detail = JSON.stringify(response.data)
+	     		localStorage.setItem('current_user', user_detail);
+	     		parse = JSON.parse(user_detail);
+	     		checkadmin = parse.admin;
+	     		console.log(checkadmin);
+	     		localStorage.setItem('admin', checkadmin)
 	     		window.location = '/'
 	     	})
 	     	.catch(function (error) {

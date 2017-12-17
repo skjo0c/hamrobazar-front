@@ -33,7 +33,7 @@ export default class createAd extends Component{
 		let price = this.state.price;
 		let description = this.state.description;
 
-		axios.defaults.headers['Authorization'] = localStorage.getItem('token');
+		axios.defaults.headers['Authorization'] = localStorage.getItem('admin');
 	    axios.post('http://localhost:3000/api/v1/advertisements', {name: name, price: price, description: description})
 	    .then((response) => {
 	      window.location = '/'

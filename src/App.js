@@ -20,22 +20,6 @@ class App extends Component {
 
   componentWillMount(){
     
-    // function getAdvertisements(){
-    //   return axios.get('http://localhost:3000/api/v1/advertisements.json');
-    // }
-
-    // function getCategorys(){
-    //   return axios.get('http://localhost:3000/api/v1/categorys.json');
-    // }
-
-    // axios.all([getAdvertisements(), getCategorys()])
-    // .then(axios.spread(function(advertisementResponse, categorysResponse){
-    //   this.setState({advertisements: advertisementResponse.data.data})
-    //   this.setState({categorys: categorysResponse.data.data})
-    // }))
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
     axios.get('http://localhost:3000/api/v1/advertisements.json')
     .then((response) => {
       this.setState({advertisements: response.data.data});
@@ -60,14 +44,13 @@ class App extends Component {
         <div className = "container">
 
           <div className = "catList">
-            {categorys.map(advertisement =>
-              <div key={categorys.id}> 
-                <h1>
-                  <Link className='adName' to = {`./categorys/${categorys.id}`}>
-                    {categorys.name}
+            {categorys.map(category =>
+              <div key={category.id}> 
+                <h4>
+                  <Link className='catName' to = {`./categorys/${categorys.id}`}>
+                    {category.title}
                   </Link>
-                </h1>
-                <h4>{categorys.price}</h4>
+                </h4>
               </div>
               )}
           </div>

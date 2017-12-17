@@ -23,6 +23,8 @@ export default class Routes extends Component{
 
 		let create_button = null;
 		let log_button = null;
+		let category_button = null;
+		let admin_route = null
 
 		if(localStorage.getItem('token') === "" || localStorage.getItem('token') === null){
 			console.log('here is no token')
@@ -47,6 +49,11 @@ export default class Routes extends Component{
 			 			</Link>
 		}
 
+		if(localStorage.getItem('admin') === 'true'){
+			category_button = <NavLink className = "nav-item" to = "/admin"> Category </NavLink>
+			admin_route = <Route exact path = '/admin' component = {Category} />
+		}
+
 		return(
 			<Router>
 				<div className = "nav-container">
@@ -60,7 +67,7 @@ export default class Routes extends Component{
 			            </Navbar.Header>
 
 			            <NavLink className = "nav-item" to = "/components/About"> About </NavLink>
-			            <NavLink className = "nav-item" to = "/admin"> Category </NavLink>
+			            {category_button}
 			            
 			            {create_button}
 
@@ -76,7 +83,7 @@ export default class Routes extends Component{
 					    <Route exact path = '/advertisements/:id' component = {View}/>
 						<Route exact path = '/components/About' component={About} />
 						<Route exact path = '/createAd' component = {createAd} />
-						<Route exact path = '/admin' component = {Category} />
+						{admin_route}
 						<Route component = {NotFound}/>
 					</Switch>
 				</div>
@@ -86,7 +93,9 @@ export default class Routes extends Component{
 	}
 
 	removeToken(){
-		localStorage.removeItem('token')
+		localStorage.removeItem('token');
+		localStorage.removeItem('current_user');
+		localStorage.removeItem('admin');
 		window.location = "/"
 	}
 }
