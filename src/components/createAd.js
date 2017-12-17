@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import '../Main.css'
 import {Button} from 'react-bootstrap';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
 export default class createAd extends Component{
 
@@ -10,7 +12,14 @@ export default class createAd extends Component{
 		this.state = {
 			name: '',
 			price: '',
-			description: ''
+			description: '',
+	      	selected_value: "one",
+	      	tags: [],
+	      	async_test: [],
+	      	options: [
+	          { value: 'one', label: 'One' },
+	          { value: 'two', label: 'Two' }
+	      	]
 		}
 		this.createAdvertisement = this.createAdvertisement.bind(this);
 	}
@@ -44,6 +53,18 @@ export default class createAd extends Component{
 	}
 
 	render(){
+
+    const getOptions = (input) => {
+    axios.defaults.headers['Authorization'] = localStorage.getItem('token');
+      return axios.get('http://localhost:3000/api/v1/categorys.json')
+        .then(function (response) {
+          let options = response.data.data.map( category => ({ value: category.id, label: category.title }));
+          return { options };
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
 		return(
 			<div className="createAd-form">
 				<form onSubmit = {this.createAdvertisement}>
@@ -54,6 +75,15 @@ export default class createAd extends Component{
 					<br/><br/>
 					<textarea className= "form-description" value={this.state.description} onChange = {this.handledescriptionChange.bind(this)} placeholder = "Description"/>
 					<br/><br/>
+			        <Select.Async
+			        	className = "category_select"
+			            name="form-field-name"
+			            multi={true}
+			            value={this.state.async_test}
+			            loadOptions={getOptions}
+			            onChange={e => this.setState({async_test: e})}
+			        />
+
 					<Button className = "log-form create-btn" type = "submit" bsStyle = "primary"> Create Advertisement </Button>
 				</form>
 			</div>

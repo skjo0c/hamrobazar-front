@@ -73,7 +73,7 @@
 
 .createAd-form{
 	width: 400px;
-	height: 450px;
+	height: 520px;
 	border-style: solid;
 	border-radius: 15px;
 	border-color: #ccc;
@@ -103,6 +103,12 @@
     border-radius: 5px;
     font-size: 16px;
     resize: none;
+}
+
+.category_select{
+	margin-left: 30px;
+	margin-bottom: 20px;
+	width: 300px;
 }
 
 .NotFound{
