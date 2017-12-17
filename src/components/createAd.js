@@ -15,7 +15,7 @@ export default class createAd extends Component{
 			description: '',
 	      	selected_value: "one",
 	      	tags: [],
-	      	async_test: [],
+	      	category: [],
 	      	options: [
 	          { value: 'one', label: 'One' },
 	          { value: 'two', label: 'Two' }
@@ -41,9 +41,10 @@ export default class createAd extends Component{
 		let name = this.state.name;
 		let price = this.state.price;
 		let description = this.state.description;
-
-		axios.defaults.headers['Authorization'] = localStorage.getItem('admin');
-	    axios.post('http://localhost:3000/api/v1/advertisements', {name: name, price: price, description: description})
+		let category = this.state.category;
+		let category_id = category.map(function(request){return request.value}) 
+		axios.defaults.headers['Authorization'] = localStorage.getItem('token');
+	    axios.post('http://localhost:3000/api/v1/advertisements', {name: name, price: price, description: description, category_id: category_id})
 	    .then((response) => {
 	      window.location = '/'
 	    })
@@ -79,9 +80,9 @@ export default class createAd extends Component{
 			        	className = "category_select"
 			            name="form-field-name"
 			            multi={true}
-			            value={this.state.async_test}
+			            value={this.state.category}
 			            loadOptions={getOptions}
-			            onChange={e => this.setState({async_test: e})}
+			            onChange={e => this.setState({category: e})}
 			        />
 
 					<Button className = "log-form create-btn" type = "submit" bsStyle = "primary"> Create Advertisement </Button>
