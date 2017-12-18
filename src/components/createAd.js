@@ -14,6 +14,7 @@ export default class createAd extends Component{
 			price: '',
 			description: '',
 	      	selected_value: "one",
+	      	picture_data: [],
 	      	tags: [],
 	      	category: [],
 	      	options: [
@@ -36,15 +37,20 @@ export default class createAd extends Component{
 		this.setState({description: event.target.value})
 	}
 
+	handleImage(event){
+		this.setState({picture_data: event.target.files[0]})
+	}
+
 	createAdvertisement(event){
 		event.preventDefault();
 		let name = this.state.name;
 		let price = this.state.price;
 		let description = this.state.description;
+		let picture_data = this.state.picture_data;
 		let category = this.state.category;
 		let category_id = category.map(function(request){return request.value}) 
 		axios.defaults.headers['Authorization'] = localStorage.getItem('token');
-	    axios.post('http://localhost:3000/api/v1/advertisements', {name: name, price: price, description: description, category_id: category_id})
+	    axios.post('http://localhost:3000/api/v1/advertisements', {name: name, price: price, description: description, picture_data: picture_data, category_id: category_id})
 	    .then((response) => {
 	      window.location = '/'
 	    })
@@ -68,13 +74,15 @@ export default class createAd extends Component{
     }
 		return(
 			<div className="createAd-form">
-				<form onSubmit = {this.createAdvertisement}>
+				<form encType='multipart/form-data' onSubmit = {this.createAdvertisement}>
 					<h3 className="log-name">Create Advertisement</h3>
 					<input type = "text" className= "create-form" value={this.state.name} onChange = {this.handlenameChange.bind(this)} placeholder = "Name"/>
 					<br/><br/>
 					<input type = "number" className= "create-form" value={this.state.price} onChange = {this.handlepriceChange.bind(this)} placeholder = "Price"/>
 					<br/><br/>
 					<textarea className= "form-description" value={this.state.description} onChange = {this.handledescriptionChange.bind(this)} placeholder = "Description"/>
+					<br/><br/>
+					<input type = "file" onChange={this.handleImage.bind(this)} multiple />
 					<br/><br/>
 			        <Select.Async
 			        	className = "category_select"

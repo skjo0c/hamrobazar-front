@@ -38,6 +38,25 @@ export default class Category_ads extends Component{
 		});
 	}
 
+    componentWillReceiveProps(props) {
+        const location = props.match.params.id;
+        axios.get('http://localhost:3000/api/v1/advertisements?category_id=' + location)
+        .then((response)=>{
+            this.setState({advertisements: response.data.data });
+        })
+        .catch(function(error){
+            console.log(error);
+        });
+
+        axios.get('http://localhost:3000/api/v1/categorys.json')
+        .then((response) => {
+          this.setState({categorys: response.data.data});
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+    
 	render(){
 		let advertisements = this.state.advertisements;
 		let categorys = this.state.categorys;
