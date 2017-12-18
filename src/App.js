@@ -47,7 +47,7 @@ class App extends Component {
             {categorys.map(category =>
               <div key={category.id}> 
                 <h4>
-                  <Link className='catName' to = {`./categorys/${categorys.id}`}>
+                  <Link className='catName' to = {`./category/${category.id}`}>
                     {category.title}
                   </Link>
                 </h4>

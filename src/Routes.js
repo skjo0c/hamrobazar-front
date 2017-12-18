@@ -3,6 +3,7 @@ import Login from './user/Login';
 import SignUp from './user/Signup';
 import App from './App';
 import View from './components/View';
+import Category_ads from './components/Category_ads';
 import createAd from './components/createAd';
 import NotFound from './components/NotFound';
 import About from './components/About';
@@ -81,6 +82,7 @@ export default class Routes extends Component{
 			        	<Route exact path = '/signup' component = {SignUp} />
 					    <Route exact path = '/' component={App} />
 					    <Route exact path = '/advertisements/:id' component = {View}/>
+					    <Route exact path = '/category/:id' component = {Category_ads}/>
 						<Route exact path = '/components/About' component={About} />
 						<Route exact path = '/createAd' component = {createAd} />
 						{admin_route}
