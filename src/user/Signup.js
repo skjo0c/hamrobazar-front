@@ -74,8 +74,9 @@ export default class SignUp extends Component{
 		let upass = this.state.upass
 		let ucpass = this.state.ucpass
 		let umobile = this.state.umobile
-		
-	    axios.post('http://localhost:3000/api/v1/users', {firstname :fname, lastname :lname, email :umail, password :upass, password_confirmation :ucpass, mobile :umobile})	    
+		let picture  = this.state.file
+		console.log(picture);
+	    axios.post('http://localhost:3000/api/v1/users', {firstname :fname, lastname :lname, email :umail, password :upass, password_confirmation :ucpass, picture: picture, mobile :umobile})	    
 	    .then((response) => {
 	    	window.location('/login')
 	    })
@@ -111,7 +112,7 @@ export default class SignUp extends Component{
 						<br/><br/>
 						<input className = "log-form" type = "number" value={this.state.umobile} onChange = {this.handleumobileChange.bind(this)} placeholder = "Mobile Number"/>
 						<br/><br/>
-						<input type = "file" onChange={this.handlepp} />
+						<input type = "file" onChange={this.handlepp.bind(this)} />
 						<br/><br/>
 						<div className = "imgPreview">
 							{$imagePreview}

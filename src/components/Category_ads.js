@@ -23,7 +23,7 @@ export default class Category_ads extends Component{
 		
 		axios.get('http://localhost:3000/api/v1/advertisements?category_id=' + location)
 		.then((response)=>{
-			this.setState({advertisement: response.data.data });
+			this.setState({advertisements: response.data.data });
 		})
 		.catch(function(error){
 			console.log(error);

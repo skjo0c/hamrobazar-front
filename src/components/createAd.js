@@ -4,6 +4,8 @@ import '../Main.css'
 import {Button} from 'react-bootstrap';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
+import Dropzone from 'react-dropzone';
+
 
 export default class createAd extends Component{
 
@@ -17,6 +19,7 @@ export default class createAd extends Component{
 	      	picture_data: [],
 	      	tags: [],
 	      	category: [],
+	      	imagePreviewUrl: '',
 	      	options: [
 	          { value: 'one', label: 'One' },
 	          { value: 'two', label: 'Two' }
@@ -37,9 +40,9 @@ export default class createAd extends Component{
 		this.setState({description: event.target.value})
 	}
 
-	handleImage(event){
-		this.setState({picture_data: event.target.files[0]})
-	}
+    onDrop(picture_data){
+    	this.setState({picture_data})
+    }
 
 	createAdvertisement(event){
 		event.preventDefault();
@@ -74,7 +77,7 @@ export default class createAd extends Component{
     }
 		return(
 			<div className="createAd-form">
-				<form encType='multipart/form-data' onSubmit = {this.createAdvertisement}>
+				<form onSubmit = {this.createAdvertisement} encType='multipart/form-data'>
 					<h3 className="log-name">Create Advertisement</h3>
 					<input type = "text" className= "create-form" value={this.state.name} onChange = {this.handlenameChange.bind(this)} placeholder = "Name"/>
 					<br/><br/>
@@ -82,7 +85,14 @@ export default class createAd extends Component{
 					<br/><br/>
 					<textarea className= "form-description" value={this.state.description} onChange = {this.handledescriptionChange.bind(this)} placeholder = "Description"/>
 					<br/><br/>
-					<input type = "file" onChange={this.handleImage.bind(this)} multiple />
+					<Dropzone 
+					  onDrop={this.onDrop.bind(this)} 
+					  multiple 
+					  accept="image/*" 
+					  // style={styles.dropzone}
+					> 	<p>Drop your files or click here to upload</p>
+					</Dropzone>
+					<ul>{this.state.picture_data.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)}</ul>
 					<br/><br/>
 			        <Select.Async
 			        	className = "category_select"
