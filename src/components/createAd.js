@@ -4,8 +4,6 @@ import '../Main.css'
 import {Button} from 'react-bootstrap';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
-import Dropzone from 'react-dropzone';
-
 
 export default class createAd extends Component{
 
@@ -19,7 +17,6 @@ export default class createAd extends Component{
 	      	picture_data: [],
 	      	tags: [],
 	      	category: [],
-	      	imagePreviewUrl: '',
 	      	options: [
 	          { value: 'one', label: 'One' },
 	          { value: 'two', label: 'Two' }
@@ -40,9 +37,10 @@ export default class createAd extends Component{
 		this.setState({description: event.target.value})
 	}
 
-    onDrop(picture_data){
-    	this.setState({picture_data})
-    }
+	handleImage(event){
+		let picture_data = new FormData();
+		this.setState({picture_data: event.target.files[0]});
+	}
 
 	createAdvertisement(event){
 		event.preventDefault();
@@ -50,10 +48,19 @@ export default class createAd extends Component{
 		let price = this.state.price;
 		let description = this.state.description;
 		let picture_data = this.state.picture_data;
+		const formData = new FormData();
 		let category = this.state.category;
-		let category_id = category.map(function(request){return request.value}) 
+		let category_id = category.map(function(request){return request.value});
+		formData.append('file',picture_data);
+		formData.append('name', name);
+		formData.append('price', price);
+		formData.append('description', description);
+		formData.append('category_id', category_id);
 		axios.defaults.headers['Authorization'] = localStorage.getItem('token');
-	    axios.post('http://localhost:3000/api/v1/advertisements', {name: name, price: price, description: description, picture_data: picture_data, category_id: category_id})
+		const config = {
+				headers: { 'content-type': 'multipart/form-data' }
+		}
+	    axios.post('http://localhost:3000/api/v1/advertisements',formData, config)
 	    .then((response) => {
 	      window.location = '/'
 	    })
@@ -77,7 +84,7 @@ export default class createAd extends Component{
     }
 		return(
 			<div className="createAd-form">
-				<form onSubmit = {this.createAdvertisement} encType='multipart/form-data'>
+				<form encType="multipart/form-data" onSubmit = {this.createAdvertisement}>
 					<h3 className="log-name">Create Advertisement</h3>
 					<input type = "text" className= "create-form" value={this.state.name} onChange = {this.handlenameChange.bind(this)} placeholder = "Name"/>
 					<br/><br/>
@@ -85,14 +92,7 @@ export default class createAd extends Component{
 					<br/><br/>
 					<textarea className= "form-description" value={this.state.description} onChange = {this.handledescriptionChange.bind(this)} placeholder = "Description"/>
 					<br/><br/>
-					<Dropzone 
-					  onDrop={this.onDrop.bind(this)} 
-					  multiple 
-					  accept="image/*" 
-					  // style={styles.dropzone}
-					> 	<p>Drop your files or click here to upload</p>
-					</Dropzone>
-					<ul>{this.state.picture_data.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)}</ul>
+					<input type = "file" onChange={this.handleImage.bind(this)} multiple />
 					<br/><br/>
 			        <Select.Async
 			        	className = "category_select"
