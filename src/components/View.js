@@ -35,6 +35,7 @@ export default class View extends Component{
 				<Panel header = {advertisement.name}>
 					<h4>Price: {advertisement.price}</h4>
 					<h4>Description: {advertisement.description}</h4>
+					<h4> Image : {advertisement.adphoto.pictures} </h4>
 				</Panel>
 
 				<Link to = '/'>Back</Link>

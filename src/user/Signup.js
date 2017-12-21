@@ -18,7 +18,7 @@ export default class SignUp extends Component{
 			upass: '',
 			ucpass: '',
 			umobile: '',
-			file: '',
+			profile_pic: [],
 			imagePreviewUrl: ''
 		}
 		this.createUser = this.createUser.bind(this);
@@ -49,35 +49,37 @@ export default class SignUp extends Component{
 	}
 
 	handlepp(event){
-		event.preventDefault();
-
-		let reader = new FileReader();
-		let file = event.target.files[0];
-		var self = this;
-
-		reader.onloadend = () => {
-			self.setState({
-				file: file,
-				imagePreviewUrl: reader.result
-			});
-		}
-
-		reader.readAsDataURL(file)
+		let profile_pic = new FormData();
+ 		this.setState({profile_pic: event.target.files[0]});
 	}
 
 	createUser(event){
 
 		event.preventDefault();
-		let fname = this.state.fname
-		let lname = this.state.lname
-		let umail = this.state.umail
-		let upass = this.state.upass
-		let ucpass = this.state.ucpass
-		let umobile = this.state.umobile
-		let picture  = this.state.file
-		console.log(picture);
-	    axios.post('http://localhost:3000/api/v1/users', {firstname :fname, lastname :lname, email :umail, password :upass, password_confirmation :ucpass, picture: picture, mobile :umobile})	    
+		let fname = this.state.fname;
+		let lname = this.state.lname;
+		let umail = this.state.umail;
+		let upass = this.state.upass;
+		let ucpass = this.state.ucpass;
+		let umobile = this.state.umobile;
+		let profile_pic = this.state.profile_pic;
+		let formData = new FormData();
+		formData.append('firstname', fname)
+		formData.append('lastname', lname)
+		formData.append('email', umail)
+		formData.append('password', upass)
+		formData.append('password_confirmation', ucpass)
+		formData.append('mobile', umobile)
+		formData.append('file', profile_pic)
+		
+		axios.defaults.headers['Authorization'] = localStorage.getItem('token');
+		const config = {
+			headers: {'content-type' : 'multipart/form-data'}
+		}
+	    axios.post('http://localhost:3000/api/v1/authenticate', formData, config)	    
 	    .then((response) => {
+	    	localStorage.setItem('token', response.data.auth_token);
+	      axios.defaults.headers['Authorization'] = localStorage.getItem('token');
 	    	window.location('/login')
 	    })
 	    .catch(function (error) {
@@ -114,9 +116,6 @@ export default class SignUp extends Component{
 						<br/><br/>
 						<input type = "file" onChange={this.handlepp.bind(this)} />
 						<br/><br/>
-						<div className = "imgPreview">
-							{$imagePreview}
-						</div>
 						<Button className = "log-form signup-btn" type = "submit" bsStyle = "primary" bsSize = "large" block> Sign Up</Button>						
 					</form>
 				</div>
