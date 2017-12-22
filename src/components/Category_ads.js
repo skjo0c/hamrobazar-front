@@ -80,15 +80,15 @@ export default class Category_ads extends Component{
 						<div className = 'adList'>
 
 							{advertisements.map(advertisement =>
-							<div key={advertisement.id}> 
-								<h1>
-									<Link className='adName' to = {`./advertisements/${advertisement.id}`}>
-										{advertisement.name}
-									</Link>
-								</h1>
-								<h4>{advertisement.price}</h4>
-							</div>
-						)}
+								<div key={advertisement.id}> 
+									<h1>
+										<Link className='adName' to = {`./advertisements/${advertisement.id}`}>
+											{advertisement.name}
+										</Link>
+									</h1>
+									<h4>{advertisement.price}</h4>
+								</div>
+							)}
 						</div>
 
 			        </div>

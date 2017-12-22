@@ -40,6 +40,8 @@ export default class Login extends Component{
 		var user_detail = null;
 		var parse = null;
 		var checkadmin = null;
+		var user_name = null;
+		var user_id = null;
 		
 	    axios.post('http://localhost:3000/api/v1/authenticate', {email: umail, password: upass})	    
 	    .then((response) => {
@@ -51,8 +53,12 @@ export default class Login extends Component{
 	     		localStorage.setItem('current_user', user_detail);
 	     		parse = JSON.parse(user_detail);
 	     		checkadmin = parse.admin;
+	     		user_name = parse.firstname;
+	     		user_id = parse.id;
 	     		console.log(checkadmin);
 	     		localStorage.setItem('admin', checkadmin)
+	     		localStorage.setItem('user', user_name)
+	     		localStorage.setItem('id', user_id)
 	     		window.location = '/'
 	     	})
 	     	.catch(function (error) {

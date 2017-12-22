@@ -4,6 +4,7 @@ import SignUp from './user/Signup';
 import App from './App';
 import View from './components/View';
 import Category_ads from './components/Category_ads';
+import MyAdvertisements from './components/MyAdvertisements';
 import createAd from './components/createAd';
 import NotFound from './components/NotFound';
 import About from './components/About';
@@ -25,7 +26,9 @@ export default class Routes extends Component{
 		let create_button = null;
 		let log_button = null;
 		let category_button = null;
-		let admin_route = null
+		let admin_route = null;
+		let my_ads = null;
+		let user_items = null;
 
 		if(localStorage.getItem('token') === "" || localStorage.getItem('token') === null){
 			console.log('here is no token')
@@ -55,6 +58,11 @@ export default class Routes extends Component{
 			admin_route = <Route exact path = '/admin' component = {Category} />
 		}
 
+		if(localStorage.getItem('user') !== null){
+			user_items = <NavLink className = "nav-item" to = "/myadvertisements"> My Advertisements </NavLink>
+			my_ads = <Route exact path = '/myadvertisements' component = {MyAdvertisements} />
+		}
+
 		return(
 			<Router>
 				<div className = "nav-container">
@@ -70,6 +78,8 @@ export default class Routes extends Component{
 			            <NavLink className = "nav-item" to = "/components/About"> About </NavLink>
 			            {category_button}
 			            
+			            {user_items}
+
 			            {create_button}
 
 			            {log_button}
@@ -86,6 +96,7 @@ export default class Routes extends Component{
 						<Route exact path = '/components/About' component={About} />
 						<Route exact path = '/createAd' component = {createAd} />
 						{admin_route}
+						{my_ads}
 						<Route component = {NotFound}/>
 					</Switch>
 				</div>
@@ -98,6 +109,8 @@ export default class Routes extends Component{
 		localStorage.removeItem('token');
 		localStorage.removeItem('current_user');
 		localStorage.removeItem('admin');
+		localStorage.removeItem('user');
+		localStorage.removeItem('id');
 		window.location = "/"
 	}
 }
