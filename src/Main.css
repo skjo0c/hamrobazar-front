@@ -37,6 +37,14 @@
 	padding: 10px;
 }
 
+.each_index_ad{
+	border-style: solid;
+	border-radius: 15px;
+	border-color: #ccc;
+	padding: 10px;
+	margin: 15px auto;
+}
+
 .adName{
 	text-decoration: none;
 	color: #303030;
@@ -45,6 +53,11 @@
 .adName:hover{
 	text-decoration: none;
 	color: black;
+}
+
+.index_ad_photos{
+	height: 200px;
+	width: 200px;
 }
 
 .catName{
@@ -58,9 +71,23 @@
 }
 
 .details{
-	position: fixed;
+	position: absolute;
 	margin-top: 100px;
 	left: 9%;
+}
+
+.detail_picture{
+	height: 400px;
+	width: 300px;
+}
+
+.detail_part{
+	float: left;
+}
+
+.detail_pic{
+	float: right;
+	margin-left: 50px;
 }
 
 .About{

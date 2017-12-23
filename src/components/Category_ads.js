@@ -80,7 +80,8 @@ export default class Category_ads extends Component{
 						<div className = 'adList'>
 
 							{advertisements.map(advertisement =>
-								<div key={advertisement.id}> 
+								<div className = "each_index_ad" key={advertisement.id}> 
+									<img className ="index_ad_photos" src = {`http://localhost:3000${advertisement.picture_data}`} />
 									<h1>
 										<Link className='adName' to = {`./advertisements/${advertisement.id}`}>
 											{advertisement.name}

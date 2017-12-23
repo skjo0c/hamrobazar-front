@@ -34,10 +34,10 @@ export default class MyAdvertisements extends Component{
 		let advertisements = this.state.advertisements;
 		
 		return(
-			<div>
-				<br/><br/><br/><br/>
+			<div className = "adList">
 				{advertisements.map(advertisement =>
 					<div key={advertisement.id}> 
+						<img className ="index_ad_photos" src = {`http://localhost:3000${advertisement.picture_data}`} />
 						<h1>
 							<Link className='adName' to = {`./advertisements/${advertisement.id}`}>
 								{advertisement.name}

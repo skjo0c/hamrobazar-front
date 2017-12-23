@@ -40,7 +40,6 @@ class App extends Component {
   render() {
     let advertisements = this.state.advertisements
     let categorys = this.state.categorys
-    // let picture_data = `http://localhost:3000${advertisements.picture_data}`;
       return (
         <div className = "container">
 
@@ -59,14 +58,14 @@ class App extends Component {
           <div className = 'adList'>
           
             {advertisements.map(advertisement =>
-              <div key={advertisement.id}> 
+              <div className = "each_index_ad" key={advertisement.id}> 
+                <img className ="index_ad_photos" src = {`http://localhost:3000${advertisement.picture_data}`} />
                 <h1>
                   <Link className='adName' to = {`./advertisements/${advertisement.id}`}>
                     {advertisement.name}
-                  </Link>
-                  <img className ="ad_photos" src = {`http://localhost:3000${advertisement.picture_data}`} />
+                  </Link>                  
                 </h1>
-                <h4>{advertisement.price}</h4>
+                <h4>{advertisement.price}</h4>                
               </div>
               )}
           </div>
