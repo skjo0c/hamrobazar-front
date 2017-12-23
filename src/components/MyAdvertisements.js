@@ -17,11 +17,13 @@ export default class MyAdvertisements extends Component{
 	}
 
 	componentWillMount(){
+		var user_ad = null;
 		const location = this.props.match.params.id;
 		const id = localStorage.getItem('id');
-		axios.get('http://localhost:3000/api/v1/advertisements?user_id:' + id)
+		axios.defaults.headers['Authorization'] = localStorage.getItem('token');
+		axios.get('http://localhost:3000/api/v1/user_advertisements.json')
 		.then((response)=>{
-			this.setState({advertisements: response.data.data });
+			this.setState({advertisements: response.data})
 		})
 		.catch(function(error){
 			console.log(error);

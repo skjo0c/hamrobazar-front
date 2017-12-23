@@ -40,6 +40,7 @@ class App extends Component {
   render() {
     let advertisements = this.state.advertisements
     let categorys = this.state.categorys
+    let picture_data = `http://localhost:3000${advertisements.picture_data}`;
       return (
         <div className = "container">
 
@@ -63,6 +64,7 @@ class App extends Component {
                   <Link className='adName' to = {`./advertisements/${advertisement.id}`}>
                     {advertisement.name}
                   </Link>
+                  <img src = {advertisement.picture_data} />
                 </h1>
                 <h4>{advertisement.price}</h4>
               </div>
