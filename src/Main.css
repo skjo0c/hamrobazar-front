@@ -40,12 +40,41 @@
 	flex-wrap: wrap;
 }
 
+.my_adList{
+	margin-left: 200px;
+	margin-top: 100px;
+	border-style: solid;
+	border-radius: 15px;
+	border-color: #ccc;
+	padding: 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;	
+}
+
 .each_index_ad{
 	border-style: solid;
 	border-radius: 15px;
 	border-color: #ccc;
 	padding: 10px;
 	margin: 15px auto;
+	width: 230px;
+}
+
+.myAdvertisements{
+	margin-top: 100px;
+	margin-left: 150px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.my_each_advertisements{
+	border-style: solid;
+	border-radius: 15px;
+	border-color: #ccc;
+	padding: 10px;
+	margin-left: 20px;
 	width: 230px;
 }
 
