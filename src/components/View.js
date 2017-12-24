@@ -46,10 +46,7 @@ export default class View extends Component{
 					<div className = "detail_part">
 						<h4>Price: {advertisement.price}</h4>
 						<h4>Description: {advertisement.description}</h4>
-						<h4> Categorys : {categorys.map(category => 
-								{category.title}
-							)}
-						</h4>
+						<h4> Categorys : {advertisement.categories} </h4>
 					</div>
 					<div className = "detail_pic">
 						<img className = "detail_picture" src = {picture_data} />

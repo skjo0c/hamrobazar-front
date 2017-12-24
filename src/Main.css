@@ -35,6 +35,9 @@
 	border-radius: 15px;
 	border-color: #ccc;
 	padding: 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 .each_index_ad{
@@ -43,6 +46,7 @@
 	border-color: #ccc;
 	padding: 10px;
 	margin: 15px auto;
+	width: 230px;
 }
 
 .adName{
@@ -57,7 +61,8 @@
 
 .index_ad_photos{
 	height: 200px;
-	width: 200px;
+	width: 203px;
+	border-radius: 8px;
 }
 
 .catName{

@@ -50,12 +50,11 @@ export default class createAd extends Component{
 		let picture_data = this.state.picture_data;
 		const formData = new FormData();
 		let category = this.state.category;
-		let category_id = category.map(function(request){return request.value});
+		let category_id = category.map(function(request){return formData.append('category_id[]', request.value);});
 		formData.append('file',picture_data);
 		formData.append('name', name);
 		formData.append('price', price);
 		formData.append('description', description);
-		formData.append('category_id', category_id);
 		axios.defaults.headers['Authorization'] = localStorage.getItem('token');
 		const config = {
 				headers: { 'content-type': 'multipart/form-data' }

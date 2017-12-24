@@ -65,7 +65,7 @@ class App extends Component {
                     {advertisement.name}
                   </Link>                  
                 </h1>
-                <h4>{advertisement.price}</h4>                
+                <h4>Price: {advertisement.price}</h4>                
               </div>
               )}
           </div>
