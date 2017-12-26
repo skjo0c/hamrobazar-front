@@ -13,7 +13,7 @@ export default class View extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			advertisement: [],
+			advertisement: {categories: []}
 			// categorys: []
 		};
 	}
@@ -52,7 +52,7 @@ export default class View extends Component{
 						<h4>Description: {advertisement.description}</h4>
 						<h4> Contact : {contact} </h4>
 						<h4> Category: {categorys.map(category =>
-								{category.title}
+								category + "|"
 							)}
 						</h4>
 					</div>
