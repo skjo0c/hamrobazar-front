@@ -14,7 +14,7 @@ export default class View extends Component{
 		super(props);
 		this.state = {
 			advertisement: [],
-			categorys: []
+			// categorys: []
 		};
 	}
 
@@ -27,20 +27,21 @@ export default class View extends Component{
 		.catch(function(error){
 			console.log(error);
 		});
-		axios.get('http://localhost:3000/api/v1/categorys?advertisement_id=' + location)
-		.then((response) => {
-			this.setState({categorys: response.data.data})
-		})
-		.catch(function(error){
-			console.log(error);
-		});
+		// axios.get('http://localhost:3000/api/v1/categorys?advertisement_id=' + location)
+		// .then((response) => {
+		// 	this.setState({categorys: response.data.data})
+		// })
+		// .catch(function(error){
+		// 	console.log(error);
+		// });
 	}
 
 	render(){
 		let advertisement = this.state.advertisement
-		let categorys = this.state.categorys
+		// let categorys = this.state.categorys
 		let firstname = `${advertisement.firstname}`
 		let contact = `${advertisement.contact}`
+		let categorys = advertisement.categories
 		let picture_data = `http://localhost:3000${advertisement.picture_data}`;
 		return(
 			<div className = "details">
@@ -50,6 +51,10 @@ export default class View extends Component{
 						<h4>Price: {advertisement.price}</h4>
 						<h4>Description: {advertisement.description}</h4>
 						<h4> Contact : {contact} </h4>
+						<h4> Category: {categorys.map(category =>
+								{category.title}
+							)}
+						</h4>
 					</div>
 					<div className = "detail_pic">
 						<img className = "detail_picture" src = {picture_data} />
