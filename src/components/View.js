@@ -39,14 +39,17 @@ export default class View extends Component{
 	render(){
 		let advertisement = this.state.advertisement
 		let categorys = this.state.categorys
+		let firstname = `${advertisement.firstname}`
+		let contact = `${advertisement.contact}`
 		let picture_data = `http://localhost:3000${advertisement.picture_data}`;
 		return(
 			<div className = "details">
 				<Panel header = {advertisement.name}>
 					<div className = "detail_part">
+						<h4>Sold by : {firstname}</h4>
 						<h4>Price: {advertisement.price}</h4>
 						<h4>Description: {advertisement.description}</h4>
-						<h4> Categorys : {advertisement.categories} </h4>
+						<h4> Contact : {contact} </h4>
 					</div>
 					<div className = "detail_pic">
 						<img className = "detail_picture" src = {picture_data} />
