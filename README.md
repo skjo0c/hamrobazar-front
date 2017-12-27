@@ -1,3 +1,24 @@
+Following are some of the screenshots for the front end whose api is at <a href="https://github.com/skjo0c/HamroBazar"> here </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
