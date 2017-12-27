@@ -1,27 +1,27 @@
 Following are some of the screenshots for the front end whose api is at <a href="https://github.com/skjo0c/HamroBazar"> here </a>
 
-<super>Screenshot where the user is not logged in, yet able to see all the tags and advertisements</super>
+<i><b><super>Screenshot where the user is not logged in, yet able to see all the tags and advertisements</super></b></i>
 
 <img src = "screenshots/1.png" width="400px">
 <!-- ![](screenshots/1.png) -->
 
-<super>User Login Page using Bootstrap buttons</super>
+<i><b><super>User Login Page using Bootstrap buttons</super></b></i>
 
 <img src = "screenshots/2.png" width="400px">
 
-<super> SignUp Page using Bootstrap buttons again </super>
+<i><b><super> SignUp Page using Bootstrap buttons again </super></b></i>
 
 <img src = "screenshots/3.png" width="400px">
 
-<super> After log in, we can see "My Advertisements" in the navbar which is for all user and "Category" for the admins-only </super>
+<i><b><super> After log in, we can see "My Advertisements" in the navbar which is for all user and "Category" for the admins-only </super></b></i>
 
 <img src = "screenshots/4.png" width="400px">
 
-<super> Create Advertisement form </super>
+<i><b><super> Create Advertisement form </super></b></i>
 
 <img src = "screenshots/5.png" width="400px">
 
-<super> Here, I logged in using different account which is not admin. As you can see, no "Category" nav-link </super>
+<i><b><super> Here, I logged in using different account which is not admin. As you can see, no "Category" nav-link </super></b></i>
 
 <img src = "screenshots/6.png" width="400px">
 
