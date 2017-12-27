@@ -17,9 +17,9 @@ export default class MyAdvertisements extends Component{
 	}
 
 	componentWillMount(){
-		var user_ad = null;
-		const location = this.props.match.params.id;
-		const id = localStorage.getItem('id');
+		// var user_ad = null;
+		// const location = this.props.match.params.id;
+		// const id = localStorage.getItem('id');
 		axios.defaults.headers['Authorization'] = localStorage.getItem('token');
 		axios.get('http://localhost:3000/api/v1/user_advertisements.json')
 		.then((response)=>{

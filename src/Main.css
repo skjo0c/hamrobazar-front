@@ -17,10 +17,10 @@
 }
 
 .catList{
-	height: 100%;
-	width: 15%;
-	margin-left: 105px;
-	float: left;
+/*	height: 100%;
+	width: 15%;*/
+/*	margin-left: 105px;
+	float: left;*/
 	margin-top: 100px;
 	border-style: solid;
 	border-radius: 15px;
@@ -29,7 +29,7 @@
 }
 
 .adList{
-	margin-left: 400px;
+/*	margin-left: 400px;*/
 	margin-top: 100px;
 	border-style: solid;
 	border-radius: 15px;
@@ -133,15 +133,16 @@
 }
 
 .createAd-form{
+	margin-top: 60px;
 	width: 400px;
-	height: 520px;
+/*	height: 520px;*/
 	border-style: solid;
 	border-radius: 15px;
 	border-color: #ccc;
 	padding: 15px;
-	position: absolute;
+/*	position: absolute;
 	top: 20%;
-	left: 40%;
+	left: 40%;*/
 	text-align: center;
 }
 
@@ -198,15 +199,12 @@
 }
 
 .LoginPage{
+	margin-top: 60px;
 	width: 400px;
-	height: 400px;
 	border-style: solid;
 	border-radius: 15px;
 	border-color: #ccc;
 	padding: 15px;
-	position: absolute;
-	top: 20%;
-	left: 40%;
 	text-align: center;
 }
 
@@ -233,15 +231,12 @@
 }
 
 .SignUpPage{
+	margin-top: 60px;
 	width: 400px;
-	height: 600px;
 	border-style: solid;
 	border-radius: 15px;
 	border-color: #ccc;
 	padding: 15px;
-	position: absolute;
-	top: 20%;
-	left: 40%;
 	text-align: center;
 }
 

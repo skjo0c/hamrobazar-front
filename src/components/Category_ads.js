@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import {Grid, Row, Col} from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -60,10 +61,12 @@ export default class Category_ads extends Component{
 	render(){
 		let advertisements = this.state.advertisements;
 		let categorys = this.state.categorys;
-		return(
-			<div>			    
-			      return (
-			        <div className = "container">
+		return(			    
+		<Grid>
+	          <Row className = "show-grid">
+	            <div className = "container">
+
+	              	<Col xs={12} md={4}>
 
 			          <div className = "catList">
 			            {categorys.map(category =>
@@ -77,6 +80,9 @@ export default class Category_ads extends Component{
 			              )}
 			          </div>
 
+			        </Col>
+
+			        <Col xs = {12} md = {8}>
 						<div className = 'adList'>
 
 							{advertisements.map(advertisement =>
@@ -91,9 +97,11 @@ export default class Category_ads extends Component{
 								</div>
 							)}
 						</div>
+					</Col>
 
-			        </div>
-			</div>
+			    </div>
+			</Row>
+		</Grid>
 		)
 	}
 }

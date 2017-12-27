@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import {Button} from 'react-bootstrap';
+import {Button, Grid, Row, Col} from 'react-bootstrap';
 
 import '../Main.css'
 
@@ -99,26 +99,34 @@ export default class SignUp extends Component{
 
 		return(
 			<div>
-				<div className = "SignUpPage"> 
-					<form onSubmit = {this.createUser}>
-						<h3 className="log-name">SignUp Page</h3>
-						<input className = "log-form" type = "text" value={this.state.fname} onChange = {this.handlefnameChange.bind(this)} placeholder = "First Name"/>
-						<br/><br/>
-						<input className = "log-form" type = "text" value={this.state.lname} onChange = {this.handlelnameChange.bind(this)} placeholder = "Last Name"/>
-						<br/><br/>
-						<input className = "log-form" type = "email" value={this.state.umail} onChange = {this.handleumailChange.bind(this)} placeholder = "Email"/>
-						<br/><br/>
-						<input className = "log-form" type = "password" value={this.state.upass} onChange = {this.handleupassChange.bind(this)} placeholder = "Password"/>
-						<br/><br/>
-						<input className = "log-form" type = "password" value={this.state.ucpass} onChange = {this.handleucpassChange.bind(this)} placeholder = "Confirmation Password"/>
-						<br/><br/>
-						<input className = "log-form" type = "number" value={this.state.umobile} onChange = {this.handleumobileChange.bind(this)} placeholder = "Mobile Number"/>
-						<br/><br/>
-						<input type = "file" onChange={this.handlepp.bind(this)} />
-						<br/><br/>
-						<Button className = "log-form signup-btn" type = "submit" bsStyle = "primary" bsSize = "large" block> Sign Up</Button>						
-					</form>
-				</div>
+				<Grid>
+					<Row className = "show-grid">
+						<div className = "container">
+							<Col xs={6} mdPush={5}>
+								<div className = "SignUpPage"> 
+									<form onSubmit = {this.createUser}>
+										<h3 className="log-name">SignUp Page</h3>
+										<input className = "log-form" type = "text" value={this.state.fname} onChange = {this.handlefnameChange.bind(this)} placeholder = "First Name"/>
+										<br/><br/>
+										<input className = "log-form" type = "text" value={this.state.lname} onChange = {this.handlelnameChange.bind(this)} placeholder = "Last Name"/>
+										<br/><br/>
+										<input className = "log-form" type = "email" value={this.state.umail} onChange = {this.handleumailChange.bind(this)} placeholder = "Email"/>
+										<br/><br/>
+										<input className = "log-form" type = "password" value={this.state.upass} onChange = {this.handleupassChange.bind(this)} placeholder = "Password"/>
+										<br/><br/>
+										<input className = "log-form" type = "password" value={this.state.ucpass} onChange = {this.handleucpassChange.bind(this)} placeholder = "Confirmation Password"/>
+										<br/><br/>
+										<input className = "log-form" type = "number" value={this.state.umobile} onChange = {this.handleumobileChange.bind(this)} placeholder = "Mobile Number"/>
+										<br/><br/>
+										<input type = "file" onChange={this.handlepp.bind(this)} />
+										<br/><br/>
+										<Button className = "log-form signup-btn" type = "submit" bsStyle = "primary" bsSize = "large" block> Sign Up</Button>						
+									</form>
+								</div>
+							</Col>
+						</div>
+					</Row>
+				</Grid>
 			</div>
 		)
 	}

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import {Button, Alert} from 'react-bootstrap';
+import {Button, Alert, Grid, Row, Col} from 'react-bootstrap';
 
 import '../Main.css'
 
@@ -95,19 +95,27 @@ export default class Login extends Component{
 		}
 		return(
 			<div>
-				<div className = "LoginPage"> 
-					<form onSubmit = {this.logUser}>
-						<h3 className="log-name">Login Page</h3>
-						<input className = "log-form" type = "email" value={this.state.umail} onChange = {this.handleumailChange.bind(this)} placeholder = "Email"/>
-						<br/><br/>
-						<input className = "log-form" type = "password" value={this.state.upass} onChange = {this.handleupassChange.bind(this)} placeholder = "Password"/>
-						<br/><br/>
-						<Button className = "log-form log-btn" type = "submit" bsStyle = "primary" bsSize = "large" block> Log In </Button>
-						<br/><br/>
-						<p>Not a user?</p><Link to = "/signup"><Button type = "submit" bsStyle = "primary"> Sign Up</Button>
-						<br/><br/></Link>
-					</form>
-				</div>
+				<Grid>
+					<Row className = "show-grid">
+						<div className = "container">
+							<Col xs={6} mdPush={5}>
+								<div className = "LoginPage"> 
+									<form onSubmit = {this.logUser}>
+										<h3 className="log-name">Login Page</h3>
+										<input className = "log-form" type = "email" value={this.state.umail} onChange = {this.handleumailChange.bind(this)} placeholder = "Email"/>
+										<br/><br/>
+										<input className = "log-form" type = "password" value={this.state.upass} onChange = {this.handleupassChange.bind(this)} placeholder = "Password"/>
+										<br/><br/>
+										<Button className = "log-form log-btn" type = "submit" bsStyle = "primary" bsSize = "large" block> Log In </Button>
+										<br/><br/>
+										<p>Not a user?</p><Link to = "/signup"><Button type = "submit" bsStyle = "primary"> Sign Up</Button>
+										<br/><br/></Link>
+									</form>
+								</div>
+							</Col>
+						</div>
+					</Row>
+				</Grid>
 			</div>
 		)
 	}

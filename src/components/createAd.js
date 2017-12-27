@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../Main.css'
-import {Button} from 'react-bootstrap';
+import '../Main.css';
+import {Button, Grid, Row, Col} from 'react-bootstrap';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
@@ -82,29 +82,38 @@ export default class createAd extends Component{
         });
     }
 		return(
-			<div className="createAd-form">
-				<form encType="multipart/form-data" onSubmit = {this.createAdvertisement}>
-					<h3 className="log-name">Create Advertisement</h3>
-					<input type = "text" className= "create-form" value={this.state.name} onChange = {this.handlenameChange.bind(this)} placeholder = "Name"/>
-					<br/><br/>
-					<input type = "number" className= "create-form" value={this.state.price} onChange = {this.handlepriceChange.bind(this)} placeholder = "Price"/>
-					<br/><br/>
-					<textarea className= "form-description" value={this.state.description} onChange = {this.handledescriptionChange.bind(this)} placeholder = "Description"/>
-					<br/><br/>
-					<input type = "file" onChange={this.handleImage.bind(this)} multiple />
-					<br/><br/>
-			        <Select.Async
-			        	className = "category_select"
-			            name="form-field-name"
-			            multi={true}
-			            value={this.state.category}
-			            loadOptions={getOptions}
-			            onChange={e => this.setState({category: e})}
-			        />
+			<Grid>
+				<Row className = "show-grid">
+				<div className = "container">
+					<Col xs={6} mdPush={5}>
+						<div className="createAd-form">
+							<form encType="multipart/form-data" onSubmit = {this.createAdvertisement}>
+								<h3 className="log-name">Create Advertisement</h3>
+								<input type = "text" className= "create-form" value={this.state.name} onChange = {this.handlenameChange.bind(this)} placeholder = "Name"/>
+								<br/><br/>
+								<input type = "number" className= "create-form" value={this.state.price} onChange = {this.handlepriceChange.bind(this)} placeholder = "Price"/>
+								<br/><br/>
+								<textarea className= "form-description" value={this.state.description} onChange = {this.handledescriptionChange.bind(this)} placeholder = "Description"/>
+								<br/><br/>
+								<input type = "file" onChange={this.handleImage.bind(this)} multiple />
+								<br/><br/>
+						        <Select.Async
+						        	className = "category_select"
+						            name="form-field-name"
+						            multi={true}
+						            value={this.state.category}
+						            loadOptions={getOptions}
+						            onChange={e => this.setState({category: e})}
+						        />
 
-					<Button className = "log-form create-btn" type = "submit" bsStyle = "primary"> Create Advertisement </Button>
-				</form>
-			</div>
+								<Button className = "log-form create-btn" type = "submit" bsStyle = "primary"> Create Advertisement </Button>
+							</form>
+						</div>
+					</Col>
+					</div>
+				</Row>
+			</Grid>
+
 		)
 	}
 }
