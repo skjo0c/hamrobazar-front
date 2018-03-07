@@ -55,14 +55,20 @@ export default class MyAdvertisements extends Component{
 	delete_item(event){
 		console.log(event.target.id)
 		let id = event.target.id
-		axios.defaults.headers['Authorization'] = localStorage.getItem('token');
-		axios.delete('http://localhost:3000/api/v1/advertisements/'+id)
-		.then((response)=>{
-			window.location ='/'
-		})
-		.catch(function(error){
-			console.log(error);
-		});
+		var confirmation = window.confirm("Are you sure you want to delete?")
+		if(confirmation == true){
+			axios.defaults.headers['Authorization'] = localStorage.getItem('token');
+			axios.delete('http://localhost:3000/api/v1/advertisements/'+id)
+			.then((response)=>{
+				window.location ='/'
+			})
+			.catch(function(error){
+				console.log(error);
+			});
+		}
+		else{
+			window.location = '/myadvertisements'
+		}
 	}
 
 	edit_item(event){

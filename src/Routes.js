@@ -70,7 +70,7 @@ export default class Routes extends Component{
 			          <Grid>
 			            <Navbar.Header>
 			              <Navbar.Brand>
-			                <NavLink className= "nav-item" to="/">HamroBazar</NavLink>
+			                <NavLink className= "nav-item" to="/">OtakuBazar</NavLink>
 			              </Navbar.Brand>
 			              <Navbar.Toggle />
 			            </Navbar.Header>
