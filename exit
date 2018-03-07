@@ -1,0 +1,269 @@
+[33mcommit d40d3d695886a6bb897253579b280477040bb3af[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Wed Mar 7 22:48:18 2018 +0545
+
+    added delete confirmation
+
+[33mcommit 08233070c6f27d329ee565e2056c90d5e1742614[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sun Dec 31 14:14:04 2017 +0545
+
+    delete
+
+[33mcommit 0cc54b192bd83f65c59c784c7d714da902125c7b[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Wed Dec 27 20:33:06 2017 +0545
+
+    readme
+
+[33mcommit 76d1c478d4f8af48e605963ce574ee9156a27b48[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Wed Dec 27 20:30:58 2017 +0545
+
+    readme
+
+[33mcommit 01d503608c0fbe27a0c07889fd3a421e2234285f[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Wed Dec 27 20:10:26 2017 +0545
+
+    readme
+
+[33mcommit 3059c60a1fd30a126406be942aae3a875914b05f[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Wed Dec 27 13:51:04 2017 +0545
+
+    css
+
+[33mcommit 9acc73418fdd67a234bfbfd14bd59cf87a8b93d7[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Tue Dec 26 21:08:13 2017 +0545
+
+    category done
+
+[33mcommit 22e3f1910f47f0c901d2cf47ca4ff14dcdd97932[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Tue Dec 26 20:15:49 2017 +0545
+
+    category error
+
+[33mcommit 0e5a93a7fe315b66b9ac020f408562f3334494b1[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Tue Dec 26 13:58:30 2017 +0545
+
+    username and contact shown
+
+[33mcommit f4fd7c3b33b0ecd6d24aa2f80b11832c99518d94[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sun Dec 24 14:20:34 2017 +0545
+
+    front end css redone
+
+[33mcommit 1db309d0d025f29066de29a982e687cf7eb070b8[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sun Dec 24 13:18:10 2017 +0545
+
+    category done
+
+[33mcommit 8c073e4415c0da536bd3f4f67cc58550ea6e10b3[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sat Dec 23 21:58:15 2017 +0545
+
+    some css
+
+[33mcommit 688d935ad665e05ccc763abd11fa6abdcb64b8b5[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sat Dec 23 21:33:13 2017 +0545
+
+    images shown in index
+
+[33mcommit a0dcb96a9542826b158b26b88ae630b892582398[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sat Dec 23 21:24:46 2017 +0545
+
+    user advertisement listed
+
+[33mcommit 9bfa0a4c24079a1af3b2e1350ef00e59fe87a70f[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Fri Dec 22 20:45:46 2017 +0545
+
+    adphotos
+
+[33mcommit d696e298dea8182f7f3bbe7c42923f9594082c81[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Thu Dec 21 19:07:49 2017 +0545
+
+    for user pp
+
+[33mcommit fd7b1a531ddabf66dfa202d45456e3c9bc8ec2dc[m
+Author: milap-neupane <neupanemil2010@gmail.com>
+Date:   Wed Dec 20 21:13:18 2017 +0545
+
+    Use form data to upload picture
+
+[33mcommit 6c4a3a949c79e97fbfecb61cf50cf4ead416ee1b[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Wed Dec 20 19:37:43 2017 +0545
+
+    adPictures
+
+[33mcommit 17e2f130436cd0c805270bcd0b3f7e30442bb78d[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Mon Dec 18 21:08:01 2017 +0545
+
+    category listed
+
+[33mcommit 005219079df9e9dd9d7e7cc967b558ed15a13e01[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Mon Dec 18 17:11:24 2017 +0545
+
+    id not taking inside the index param
+
+[33mcommit 2d47323f5cd834d0580aff94bb7279560187233e[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sun Dec 17 20:33:14 2017 +0545
+
+    tag for advertisement
+
+[33mcommit cef18e6c1fe0fb230c7f14ea178895990d4f70a2[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sun Dec 17 17:06:01 2017 +0545
+
+    Tag selector created, authorization_error
+
+[33mcommit 7c347588e0651d31e2ae9cc37742a289f62408e3[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sun Dec 17 13:28:33 2017 +0545
+
+    category for admin only
+
+[33mcommit c2885d2d969b614815358f025772981de1a469f5[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sat Dec 16 20:05:11 2017 +0545
+
+    login_with_current_user_details
+
+[33mcommit 53171c79307124c68c6e88b679ce1962fb532876[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sat Dec 16 19:44:48 2017 +0545
+
+    category shown
+
+[33mcommit 61cc876f36bfadd343e02616762b6b8fb3b08e50[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sat Dec 16 19:24:49 2017 +0545
+
+    category json
+
+[33mcommit 215f1aebf9a77bde4eba16d98a24926b86d44233[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sat Dec 16 19:11:05 2017 +0545
+
+    route for current user
+
+[33mcommit 13b21c8a594e47d2aadf0dc34a78f70ee314bf3c[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Fri Dec 15 16:26:15 2017 +0545
+
+    error message displayed
+
+[33mcommit 1f3606c346faaad5e80ff7de546434e50e68c2d2[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Thu Dec 14 12:08:39 2017 +0545
+
+    LogIn/LogOut
+
+[33mcommit 793ac2aedf360ec6e0d14fabd886d175c52d95a0[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Wed Dec 13 20:31:12 2017 +0545
+
+    create ad done
+
+[33mcommit 3b3942f6990501d094e58603ea14038f331a5580[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Wed Dec 13 19:49:46 2017 +0545
+
+    create ad
+
+[33mcommit c106c430d91b8f5722251d9f6993cb75ff0811de[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Tue Dec 12 19:17:57 2017 +0545
+
+    Login done
+
+[33mcommit 9bf55a5b85b99f9f8a850bcb5ffe1414d17282f2[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Fri Dec 1 21:00:17 2017 +0545
+
+    login type done
+
+[33mcommit fb440d2c4b956ea0367b5507a03f0c0a962b15be[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Fri Dec 1 20:51:51 2017 +0545
+
+    login
+
+[33mcommit 7d0026a32b93ae8f2743c465bace1983706cdda7[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Wed Nov 29 19:27:06 2017 +0545
+
+    view detail of each ad
+
+[33mcommit 88c2bf9d2f4be23018e6e759e41a1f0789b74c00[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Wed Nov 29 18:33:01 2017 +0545
+
+    view detail of each ad
+
+[33mcommit 07e1d2c6fec383670118e9ea59cb11e1282fa4e7[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Tue Nov 28 19:41:17 2017 +0545
+
+    zxc
+
+[33mcommit 5a74c52ba3ec5f037d709962caeb0ba7edc207ed[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Tue Nov 28 12:21:27 2017 +0545
+
+    routes redone
+
+[33mcommit 706b1a874b0cee4823fee0bfa96e6ddd6cb16a0e[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Mon Nov 27 17:33:02 2017 +0545
+
+    route for view
+
+[33mcommit e77c2b041ba095df6eefacf21af64a3b0881980f[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sun Nov 26 16:34:55 2017 +0545
+
+    shown the ajax
+
+[33mcommit 9ac9270d2821c53f94783b492ddf0eaf69a8d3b7[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Sun Nov 26 16:24:59 2017 +0545
+
+    problem with mapping
+
+[33mcommit 8681f08c70c70e4ba346f4cb126e6631975bb6ee[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Fri Nov 24 16:04:00 2017 +0545
+
+    axios setup
+
+[33mcommit b46f1c970c714aa604bb45e328af874246df9e7b[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Fri Nov 24 14:36:56 2017 +0545
+
+    made changes on view
+
+[33mcommit 188cda1c505a0d58b110a23dbbe76bdab1803037[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Thu Nov 23 19:31:49 2017 +0545
+
+    task done
+
+[33mcommit b2cf2aab5a6e174fe60cca2694f6990131efe079[m
+Author: skj <skj.jo0c@gmail.com>
+Date:   Wed Nov 22 19:43:11 2017 +0545
+
+    init
